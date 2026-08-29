@@ -1,0 +1,11 @@
+name: Validate wordpress
+
+on:
+  workflow_call:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose -f docker-compose.deployment.yml config --quiet
